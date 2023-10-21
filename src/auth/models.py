@@ -14,6 +14,7 @@ class User(Base):
     __tablename__ = 'users' 
 
     id = Column(UUID(as_uuid=True), default=uuid.uuid4, primary_key=True)
+    telegramm_id = Column(String, nullable=True)
     email = Column(String)
     hashed_password = Column(String(length=1024))
     is_superuser = Column(Boolean, default=False)
