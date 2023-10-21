@@ -1,6 +1,6 @@
-from sqlalchemy import Column, Table, MetaData, String, ForeignKey, UUID, Boolean, Integer
+from sqlalchemy import Column, Table, MetaData, String, ForeignKey, UUID, Boolean, Integer, ARRAY
 from sqlalchemy.ext.declarative import declarative_base
-from ..auth.models import Passport
+from ..users.models import Passport
 
 import uuid
 
@@ -15,6 +15,7 @@ class Train(Base):
     trein = Column(String)
     van = Column(String)
     seat = Column(String)
+    food_ids = Column(ARRAY(item_type = Integer))
 
 
 
